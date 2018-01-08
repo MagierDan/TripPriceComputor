@@ -15,6 +15,12 @@
     <packaging>jar</packaging>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
         <!-- Tests -->
         <dependency>
             <groupId>junit</groupId>
@@ -52,16 +58,12 @@
             <groupId>org.technbolts.tzatziki</groupId>
             <artifactId>tzatziki-pdf</artifactId>
             <version>${tzatziki.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson-annotations.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${spring.version}</version>
         </dependency>
     </dependencies>
 
