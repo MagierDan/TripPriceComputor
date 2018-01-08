@@ -1,7 +1,7 @@
 package com.magier.tripservice.domain;
 
 public class Travel {
-    String destination;
+    private String destination;
 
     public String getDestination() {
         return destination;

@@ -12,7 +12,6 @@
     </parent>
 
     <artifactId>exposition</artifactId>
-    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
@@ -76,7 +75,7 @@
     </dependencies>
 
 
-    <!--build>
+    <build>
         <defaultGoal>spring-boot:run</defaultGoal>
         <resources>
             <resource>
@@ -98,5 +97,5 @@
                 </executions>
             </plugin>
         </plugins>
-    </build-->
+    </build>
 </project>
