@@ -2,7 +2,6 @@ package com.magier.tripservice.infrastructure.travel.fees;
 
 import com.magier.tripservice.domain.PriceComputorPort;
 import com.magier.tripservice.domain.Destination;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
