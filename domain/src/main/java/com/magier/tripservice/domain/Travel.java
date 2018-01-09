@@ -9,5 +9,4 @@ public class Travel {
     public void setDestination(String destination) {
         this.destination = destination;
     }
-
 }

@@ -1,6 +1,7 @@
 package com.magier.tripservice.exposition.api;
 
 import com.magier.tripservice.domain.PriceComputorPort;
+import com.magier.tripservice.domain.Travel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -24,9 +25,9 @@ public class TripResource {
     @ApiOperation(value = "Compute travel fees", notes = "Returns the price of a trip")
     @RequestMapping(value = {"/trip/{destination}"}, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Integer> computeFee(
-            @PathVariable(value = "destination") String destination) {
+            @PathVariable(value = "destination") Travel travel) {
         try {
-            Integer travelPrice = priceComputor.computeTravelPrice(destination);
+            Integer travelPrice = priceComputor.computeTravelPrice(travel.getDestination());
             return new ResponseEntity<>(travelPrice, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(-1, HttpStatus.NOT_FOUND);
