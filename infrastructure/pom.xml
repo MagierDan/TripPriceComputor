@@ -78,6 +78,11 @@
             <version>${h2.version}</version>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+            <groupId>com.magier.tripservice</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

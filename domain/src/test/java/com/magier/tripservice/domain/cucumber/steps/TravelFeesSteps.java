@@ -1,10 +1,8 @@
 package com.magier.tripservice.domain.cucumber.steps;
 
-import com.magier.tripservice.domain.PriceComputorPort;
-import com.magier.tripservice.domain.Travel;
+import com.magier.tripservice.domain.Destination;
 import com.magier.tripservice.domain.TravelFeesRepositoryPort;
 import com.magier.tripservice.domain.TravelPriceComputor;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -15,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TravelFeesSteps {
 
-    private Travel travel=new Travel();
+    private Destination destination = new Destination();
     private TravelFeesRepositoryPort travelFeesRepository;
     private TravelPriceComputor travelPriceComputor;
 
@@ -30,24 +28,24 @@ public class TravelFeesSteps {
     }
 
     @Given("^the customer want to travel to \"([^\"]*)\"$")
-    public void the_customer_want_to_travel_to(String destination) {
-        travel.setDestination(destination);
+    public void the_customer_want_to_travel_to(String dest) {
+        destination.setName(dest);
     }
 
     @Given("^the travel fees are (\\d+)€$")
     public void the_travel_fees_are_€(double travelFees) {
-        Mockito.when(travelFeesRepository.getTravelFeesByDestination(travel.getDestination())).thenReturn(travelFees);
+        Mockito.when(travelFeesRepository.getTravelFeesByDestination(destination.getName())).thenReturn(travelFees);
     }
 
     @Given("^the agency fees are (\\d+)€$")
     public void the_agency_fees_are_€(double agencyFees) {
-        Mockito.when(travelFeesRepository.getAgencyFeesByDestination(travel.getDestination())).thenReturn(agencyFees);
+        Mockito.when(travelFeesRepository.getAgencyFeesByDestination(destination.getName())).thenReturn(agencyFees);
     }
 
 
     @When("^the system calculate the travel fees$")
     public void the_system_calculate_the_travel_fees() {
-        computedPrice = travelPriceComputor.computeTravelPrice(travel.getDestination());
+        computedPrice = travelPriceComputor.computeTravelPrice(destination.getName());
     }
 
     @Then("^the travel price is (\\d+)€$")
