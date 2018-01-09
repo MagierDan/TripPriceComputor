@@ -1,0 +1,5 @@
+com/magier/tripservice/domain/TravelPriceComputor.class
+com/magier/tripservice/domain/PriceComputor.class
+com/magier/tripservice/domain/TravelFeesRepositoryPort.class
+com/magier/tripservice/domain/PriceComputorDriverPort.class
+com/magier/tripservice/domain/Destination.class

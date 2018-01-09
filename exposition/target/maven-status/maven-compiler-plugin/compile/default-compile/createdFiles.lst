@@ -1,0 +1,3 @@
+com/magier/tripservice/exposition/Application.class
+com/magier/tripservice/exposition/config/SwaggerConfig.class
+com/magier/tripservice/exposition/api/TripResource.class

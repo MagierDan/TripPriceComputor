@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.technbolts:asciitech:third-parties:0.0.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/technbolts/asciitech/0.0.5/asciitech-0.0.5-third-parties.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/technbolts/asciitech/0.0.5/asciitech-0.0.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/technbolts/asciitech/0.0.5/asciitech-0.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
