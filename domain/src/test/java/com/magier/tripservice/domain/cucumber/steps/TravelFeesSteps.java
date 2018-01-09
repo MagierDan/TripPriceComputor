@@ -22,7 +22,7 @@ public class TravelFeesSteps {
     @Before
     public void setup() {
         travelFeesRepository = Mockito.mock(TravelFeesRepositoryPort.class);
-//        travelPriceComputor = Mockito.spy(new TravelPriceComputor(travelFeesRepository));
+        travelPriceComputor = Mockito.spy(new TravelPriceComputor(travelFeesRepository));
 
         //travelPriceComputor.setPriceComputerPort(travelFeesRepository);
     }
