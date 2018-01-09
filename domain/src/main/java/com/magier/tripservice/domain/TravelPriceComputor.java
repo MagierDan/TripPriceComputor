@@ -3,7 +3,7 @@ package com.magier.tripservice.domain;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TravelPriceComputor implements PriceComputorPort {
+public class TravelPriceComputor implements PriceComputor{
 
     private TravelFeesRepositoryPort travelFeesRepository;
 

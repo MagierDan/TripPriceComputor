@@ -1,6 +1,6 @@
 package com.magier.tripservice.exposition.api;
 
-import com.magier.tripservice.infrastructure.travel.fees.TravelCostCalculatorDriver;
+import com.magier.tripservice.domain.PriceComputorDriverPort;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/api")
 public class TripResource {
 
-    private final TravelCostCalculatorDriver travelCostCalculatorDriver;
+    private final PriceComputorDriverPort priceComputorDriverPort;
 
-    public TripResource(final TravelCostCalculatorDriver travelCostCalculatorDriver) {
-        this.travelCostCalculatorDriver = travelCostCalculatorDriver;
+    public TripResource(final PriceComputorDriverPort travelCostCalculatorDriver) {
+        this.priceComputorDriverPort= travelCostCalculatorDriver;
     }
 
     @ApiOperation(value = "Compute travel fees", notes = "Returns the price of a trip")
@@ -26,7 +26,7 @@ public class TripResource {
     public ResponseEntity<Integer> computeFees(
             @PathVariable(value = "destination") String destinationName) {
         try {
-            Integer travelPrice = travelCostCalculatorDriver.calculateTravelCosts(destinationName);
+            Integer travelPrice = priceComputorDriverPort.computeTravelPrice(destinationName);
             return new ResponseEntity<>(travelPrice, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(-1, HttpStatus.NOT_FOUND);
