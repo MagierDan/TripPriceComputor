@@ -17,7 +17,7 @@ public class TravelFeesSteps {
     private TravelFeesRepositoryPort travelFeesRepository;
     private TravelPriceComputor travelPriceComputor;
 
-    private double computedPrice;
+    private Integer computedPrice;
 
     @Before
     public void setup() {
@@ -33,12 +33,12 @@ public class TravelFeesSteps {
     }
 
     @Given("^the travel fees are (\\d+)€$")
-    public void the_travel_fees_are_€(double travelFees) {
+    public void the_travel_fees_are_€(Integer travelFees) {
         Mockito.when(travelFeesRepository.getTravelFeesByDestination(destination.getName())).thenReturn(travelFees);
     }
 
     @Given("^the agency fees are (\\d+)€$")
-    public void the_agency_fees_are_€(double agencyFees) {
+    public void the_agency_fees_are_€(Integer agencyFees) {
         Mockito.when(travelFeesRepository.getAgencyFeesByDestination(destination.getName())).thenReturn(agencyFees);
     }
 
@@ -49,7 +49,7 @@ public class TravelFeesSteps {
     }
 
     @Then("^the travel price is (\\d+)€$")
-    public void the_travel_price_is_€(double expectedPrice) {
+    public void the_travel_price_is_€(Integer expectedPrice) {
         assertThat(expectedPrice).isEqualTo(computedPrice);
     }
 }

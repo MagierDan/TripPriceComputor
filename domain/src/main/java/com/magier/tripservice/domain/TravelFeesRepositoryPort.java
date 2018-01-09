@@ -1,7 +1,7 @@
 package com.magier.tripservice.domain;
 
 public interface TravelFeesRepositoryPort {
-    double getTravelFeesByDestination(String destination);
+    Integer getTravelFeesByDestination(String destination);
 
-    double getAgencyFeesByDestination(String destination);
+    Integer getAgencyFeesByDestination(String destination);
 }

@@ -7,13 +7,13 @@ public class TravelPriceComputor implements PriceComputorPort {
 
     private TravelFeesRepositoryPort travelFeesRepository;
 
-    public TravelPriceComputor() {}
+    //public TravelPriceComputor() {}
 
     public TravelPriceComputor(TravelFeesRepositoryPort travelFeesRepository) {
         this.travelFeesRepository = travelFeesRepository;
     }
 
-    public double computeTravelPrice(final String destination) {
+    public Integer computeTravelPrice(final String destination) {
         return travelFeesRepository.getAgencyFeesByDestination(destination) + travelFeesRepository.getTravelFeesByDestination(destination);
     }
 

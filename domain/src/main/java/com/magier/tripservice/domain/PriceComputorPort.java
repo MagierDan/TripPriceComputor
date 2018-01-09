@@ -1,5 +1,5 @@
 package com.magier.tripservice.domain;
 
 public interface PriceComputorPort {
-    double computeTravelPrice(final String destination);
+    Integer computeTravelPrice(final String destination);
 }

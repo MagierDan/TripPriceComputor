@@ -1,7 +1,5 @@
 package com.magier.tripservice.exposition.api;
 
-import com.magier.tripservice.domain.PriceComputorPort;
-import com.magier.tripservice.domain.Destination;
 import com.magier.tripservice.infrastructure.travel.fees.TravelCostCalculatorDriver;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
