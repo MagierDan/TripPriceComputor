@@ -4,13 +4,13 @@ import com.magier.tripservice.domain.PriceComputor;
 import com.magier.tripservice.domain.PriceComputorDriverPort;
 import com.magier.tripservice.domain.Destination;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TravelPriceComputorDriverAdapter implements PriceComputorDriverPort{
     private final PriceComputor priceComputor;
 
-    @Autowired
     public TravelPriceComputorDriverAdapter(final PriceComputor priceComputor) {
         this.priceComputor = priceComputor;
     }
