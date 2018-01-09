@@ -22,9 +22,9 @@ public class TravelFeesSteps {
     @Before
     public void setup() {
         travelFeesRepository = Mockito.mock(TravelFeesRepositoryPort.class);
-        travelPriceComputor = Mockito.spy(TravelPriceComputor.class);
+        travelPriceComputor = Mockito.spy(new TravelPriceComputor(travelFeesRepository));
 
-        travelPriceComputor.setPriceComputerPort(travelFeesRepository);
+        //travelPriceComputor.setPriceComputerPort(travelFeesRepository);
     }
 
     @Given("^the customer want to travel to \"([^\"]*)\"$")
