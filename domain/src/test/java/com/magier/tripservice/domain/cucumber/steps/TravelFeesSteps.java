@@ -22,9 +22,7 @@ public class TravelFeesSteps {
     @Before
     public void setup() {
         travelFeesRepository = Mockito.mock(TravelFeesRepositoryPort.class);
-//        travelPriceComputor = Mockito.spy(new TravelPriceComputor(travelFeesRepository));
-
-        //travelPriceComputor.setPriceComputerPort(travelFeesRepository);
+       travelPriceComputor = Mockito.spy(new TravelPriceComputor(travelFeesRepository));
     }
 
     @Given("^the customer want to travel to \"([^\"]*)\"$")
@@ -41,7 +39,6 @@ public class TravelFeesSteps {
     public void the_agency_fees_are_€(Integer agencyFees) {
         Mockito.when(travelFeesRepository.getAgencyFeesByDestination(destination.getName())).thenReturn(agencyFees);
     }
-
 
     @When("^the system calculate the travel fees$")
     public void the_system_calculate_the_travel_fees() {
