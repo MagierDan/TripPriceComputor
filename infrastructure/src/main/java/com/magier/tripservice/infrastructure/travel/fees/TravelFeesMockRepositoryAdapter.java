@@ -1,5 +1,6 @@
 package com.magier.tripservice.infrastructure.travel.fees;
 
+import com.magier.tripservice.domain.Destination;
 import com.magier.tripservice.domain.TravelFeesRepositoryPort;
 import org.springframework.stereotype.Repository;
 
@@ -7,8 +8,8 @@ import org.springframework.stereotype.Repository;
 public class TravelFeesMockRepositoryAdapter implements TravelFeesRepositoryPort {
 
     @Override
-    public Integer getTravelFeesByDestination(String destination) {
-        switch (destination) {
+    public Integer getTravelFeesByDestination(Destination destination) {
+        switch (destination.getName()) {
             case "Paris":
                 return 250;
             case "Lille":
@@ -23,8 +24,8 @@ public class TravelFeesMockRepositoryAdapter implements TravelFeesRepositoryPort
     }
 
     @Override
-    public Integer getAgencyFeesByDestination(String destination) {
-        switch (destination) {
+    public Integer getAgencyFeesByDestination(Destination destination) {
+        switch (destination.getName()) {
             case "Paris":
                 return 25;
             case "Lille":

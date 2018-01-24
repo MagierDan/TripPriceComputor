@@ -19,7 +19,7 @@ public class TravelPriceComputorDriverAdapter implements PriceComputorDriverPort
     public Integer computeTravelPrice(String destinationName) {
         Destination destination = new Destination();
         destination.setName(destinationName);
-        return priceComputor.computeTravelPrice(destinationName);
+        return priceComputor.computeTravelPrice(destination);
     }
 
 }

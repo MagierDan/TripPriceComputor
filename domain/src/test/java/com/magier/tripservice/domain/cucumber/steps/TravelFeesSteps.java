@@ -32,17 +32,17 @@ public class TravelFeesSteps {
 
     @Given("^the travel fees are (\\d+)€$")
     public void the_travel_fees_are_€(Integer travelFees) {
-        Mockito.when(travelFeesRepository.getTravelFeesByDestination(destination.getName())).thenReturn(travelFees);
+        Mockito.when(travelFeesRepository.getTravelFeesByDestination(destination)).thenReturn(travelFees);
     }
 
     @Given("^the agency fees are (\\d+)€$")
     public void the_agency_fees_are_€(Integer agencyFees) {
-        Mockito.when(travelFeesRepository.getAgencyFeesByDestination(destination.getName())).thenReturn(agencyFees);
+        Mockito.when(travelFeesRepository.getAgencyFeesByDestination(destination)).thenReturn(agencyFees);
     }
 
     @When("^the system calculate the travel fees$")
     public void the_system_calculate_the_travel_fees() {
-        computedPrice = travelPriceComputor.computeTravelPrice(destination.getName());
+        computedPrice = travelPriceComputor.computeTravelPrice(destination);
     }
 
     @Then("^the travel price is (\\d+)€$")
