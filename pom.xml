@@ -38,6 +38,7 @@
         <postgresql.version>42.1.4</postgresql.version>
         <spring.version>4.3.11.RELEASE</spring.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
+        <spring-web.version>5.0.2.RELEASE</spring-web.version>
         <swagger.version>2.7.0</swagger.version>
         <swagger-ui.version>2.7.0</swagger-ui.version>
         <tzatziki.version>0.15.1</tzatziki.version>
